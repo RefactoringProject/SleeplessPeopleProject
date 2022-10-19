@@ -2,7 +2,6 @@ import {
   RiRestaurant2Line,
   RiComputerLine,
   RiGasStationFill,
-  RiStarFill,
 } from "react-icons/ri";
 import { GiLoveSong, GiMedicines, GiSittingDog } from "react-icons/gi";
 import {
