@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { RiRoadMapLine } from "react-icons/ri";
 
-import Header from "./Header";
+import Header from "../Header";
 import { ReactComponent as Star } from "../asset/star.svg";
 
 const List = ({ selectData }) => {

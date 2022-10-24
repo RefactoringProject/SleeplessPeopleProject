@@ -1,36 +1,19 @@
-import { useEffect, useState } from "react";
+import Header from "../ViewHeader";
+import Button from "../../component/Button";
+import StoreMap from "../../component/StoreMap";
+import GoodButton from "../../component/GoodButton";
+
 import styled from "styled-components";
-import axios from "axios";
-import { useLocation, Link } from "react-router-dom";
 import { RiStarFill } from "react-icons/ri";
+import { useLocation, Link } from "react-router-dom";
+import { useState } from "react";
 
-import Header from "./Header";
-import Button from "../component/Button";
-import StoreMap from "../component/StoreMap";
-import GoodButton from "../component/GoodButton.js";
-
-const StoreDetail = () => {
+const ViewStore = () => {
   const [storeItemDetail, setStoreItemDetail] = useState(null);
   const {
     state: { storeData },
   } = useLocation();
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_URL_API}/v1/shop/${storeData}`)
-      .then((data) => {
-        setStoreItemDetail(data.data);
-      })
-      .catch((err) => {
-        console.log("err");
-        console.log(err);
-      });
-  }, [storeItemDetail, storeData]);
-
-  if (storeItemDetail === null) {
-    return;
-  }
-  console.log(storeItemDetail);
   return (
     <StoreContainer>
       <Header />
@@ -100,7 +83,7 @@ const StoreDetail = () => {
   );
 };
 
-export default StoreDetail;
+export default ViewStore;
 
 const StoreContainer = styled.main`
   margin: 20px 0;

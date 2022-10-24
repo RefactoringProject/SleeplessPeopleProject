@@ -1,21 +1,21 @@
+import Header from "../Header";
+import categoryList from "../../DummyData/categoryList";
+import Footer from "../../component/Footer";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Header from "./Header";
-import categoryList from "../DummyData/categoryList";
-import Footer from "../component/Footer.js";
-
-const Home = () => {
+const ViewHome = () => {
   const [openMenu, setOpenMenu] = useState(true);
 
-  const toggleMenu = () => {
+  const HandleToggleMenu = () => {
     setOpenMenu(!openMenu);
   };
 
   return (
     <article>
-      <Header toggleMenu={toggleMenu} openMenu={openMenu} />
+      <Header HandleToggleMenu={HandleToggleMenu} openMenu={openMenu} />
       <MainContainer>
         <h1>카테고리</h1>
         <a
@@ -53,7 +53,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ViewHome;
 
 const MainContainer = styled.main`
   padding: 36px 24px 0px 24px;
